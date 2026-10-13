@@ -10,6 +10,11 @@
 `index.html` 한 파일로 동작합니다. GitHub Pages를 켜면 바로 공개됩니다.
 (Settings → Pages → Branch: main, folder: / (root))
 
+## 종가 자동 갱신
+`.github/workflows/update-prices.yml`이 미국장 마감 뒤(평일 UTC 21:30) 종가를 받아 `source/prices.json`과 `index.html`을 갱신하고 직접 커밋합니다.
+수동 실행은 저장소 Actions 탭 → 종가 갱신 → Run workflow입니다.
+갱신되는 것은 카드, 낙폭 차트, 주가 차트입니다. 종목 상세 본문의 숫자는 문서 작성 시점(10/7~10/9) 기준이라 그대로입니다.
+
 ## 수정
 `source/data/<TICKER>.json`을 고친 뒤 `source/` 폴더에서 `python3 build.py`를 실행하면 `index.html`이 다시 만들어집니다.
 가격은 `source/prices.json`(yfinance 일별 종가)입니다.
